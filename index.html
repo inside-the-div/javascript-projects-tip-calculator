@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <div class="tip-container">
+        <h1><i>Tip Calculator</i></h1>
+        <div class="container-feild-group">
+            
+            <div id="tipInput" class="container-feild">             
+                <div class="input-group">
+                    <label for="bill" class="input-label">Bill:</label>
+                    <input type="number" name="bill" min="0" class="input-feild">
+                </div>
+                <div class="input-group">
+                    <label for="tip-persent" class="input-label">Tips:(%)</label>
+                    <input type="number" name="tips" min ="1" max="100" class="input-feild">
+                </div>
+                <div class="input-group">
+                    <label for="person" class="input-label">Number of Person:</label>
+                    <input type="number" name="person" min="1" max="25" class="input-feild">
+                </div>
+                <div class="input-group">
+                    <button class="btn btn-reset">Reset</button>
+                    <button class="btn btn-calculate">Calculate</button>
+                </div>        
+            </div>
+            
+            <div id="tipOutput" class="container-feild">             
+                   
+            </div>
+        </div>
+        
+    </div>    
+</body>
+</html>
