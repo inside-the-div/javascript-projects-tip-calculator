@@ -136,13 +136,14 @@
     .container-feild{
         width: 98%;
     }
-  }
+}
 #OutputInfo{
     display: none;
 }
 .output-box h3{
     text-align: center;
     margin-bottom: 10px;
+    font-size: 30px;
 }
 .output-box table tr{
     height: 30px;
@@ -150,4 +151,7 @@
 .output-box table tr:nth-last-child(2) td {
     border-top: 1px solid black;
     border-collapse: collapse;
-  }
+}
+.output-table{
+    font-size: 25px;
+}
