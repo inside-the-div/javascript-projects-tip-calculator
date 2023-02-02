@@ -15,15 +15,15 @@
             <div id="tipInput" class="container-feild">             
                 <div class="input-group">
                     <label for="bill" class="input-label">Bill:</label>
-                    <input type="number" name="bill" min="0" class="input-feild">
+                    <input placeholder="Bill" type="number" name="bill" min="0" class="input-feild">
                 </div>
                 <div class="input-group">
-                    <label for="tip-persent" class="input-label">Tips:(%)</label>
-                    <input type="number" name="tips" min ="1" max="100" class="input-feild">
+                    <label for="tip-persent" class="input-label">Tips(%):</label>
+                    <input placeholder="Tips(%)" type="number" name="tips" min ="1" max="100" class="input-feild">
                 </div>
                 <div class="input-group">
                     <label for="person" class="input-label">Number of Person:</label>
-                    <input type="number" name="person" min="1" max="25" class="input-feild">
+                    <input placeholder="Person" type="number" name="person" min="1" max="25" class="input-feild">
                 </div>
                 <div class="input-group">
                     <button class="btn btn-reset">Reset</button>
@@ -32,7 +32,43 @@
             </div>
             
             <div id="tipOutput" class="container-feild">             
-                   
+                <div id="OutputInfo" class="output-information output-box">
+                    <ul>
+                        <li><b>Bill</b> indicate that how much your cost</li>
+                        <li><b>Tip(%)</b> indicate that tip persentage</li>
+                        <li><b>Number of person</b> is how many person will share the bill</li>
+                    </ul>
+                </div>
+                <div id="OutputResult" class="output-results output-box">
+                    <h3>Calculate Result</h3>
+                    <table>
+                        <tr>
+                            <td>Bill</td>
+                            <td>:</td>
+                            <td><span id="bill">100 $</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tip</td>
+                            <td>:</td>
+                            <td><span id="tip">10 $</span></td>
+                        </tr>
+                        <tr>
+                            <td>Total Person</td>
+                            <td>:</td>
+                            <td><span id="totalPerson">2</span></td>
+                        </tr>
+                        <tr>
+                            <td>Total Bill</td>
+                            <td>:</td>
+                            <td><span id="totalBill">110 $</span></td>
+                        </tr>
+                        <tr>
+                            <td>Per Person Bill</td>
+                            <td>:</td>
+                            <td><span id="perPersonBill">55 $</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         
