@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="../common-assets/css/project-common-css.css">
+    <link rel="stylesheet" href="Css/tip-calculator-style.css">
     <title>Tip Calculator</title>
 </head>
 <body>
-    <div class="tip-container">
+    <div class="container">
         <h1><i>Tip Calculator</i></h1>
         <div class="container-feild-group">
             
-            <div id="tipInput" class="container-feild">             
+            <div class="container-feild">             
                 <div class="input-group">
                     <label for="bill" class="input-label">Bill:</label>
-                    <input id="billInput" placeholder="Bill" type="number" name="bill" min="0" class="input-feild">
+                    <input id="billInput" placeholder="Bill" type="number" name="bill"  class="input-feild">
                 </div>
                 <div class="input-group">
                     <label for="tip-persent" class="input-label">Tips(%):</label>
-                    <input id="tipInput" placeholder="Tips(%)" type="number" name="tips" min ="1" max="100" class="input-feild">
+                    <input id="tipInput" placeholder="Tips(%)" type="number" name="tips" class="input-feild">
                 </div>
                 <div class="input-group">
-                    <label  for="person" class="input-label">Number of Person:</label>
-                    <input id="personInput" placeholder="Person" type="number" name="person" min="1" max="25" class="input-feild">
+                    <label for="person" class="input-label">Number of Person:</label>
+                    <input id="personInput" placeholder="Person" type="number" name="person" class="input-feild">
                 </div>
                 <div class="input-group">
-                    <button id="btnReset" class="btn btn-reset">Reset</button>
-                    <button id="btnCalculate" class="btn btn-calculate">Calculate</button>
+                    <button onclick="TipCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="TipCalculation()" id="btnCalculate" class="btn btn-calculate">Calculate</button>
                 </div>        
             </div>
             
@@ -40,7 +41,7 @@
                     </ul>
                 </div>
                 <div id="OutputResult" class="output-results output-box">
-                    <h3>Calculate Result</h3>
+                    <h2>Result</h2>
                     <table class="output-table">
                         <tr>
                             <td>Bill</td>
@@ -58,6 +59,11 @@
                             <td><span id="totalPerson">2</span></td>
                         </tr>
                         <tr>
+                            <td>Total Tip</td>
+                            <td>:</td>
+                            <td><span id="totalTip">2</span></td>
+                        </tr>
+                        <tr>
                             <td>Total Bill</td>
                             <td>:</td>
                             <td><span id="totalBill">110 $</span></td>
@@ -71,7 +77,11 @@
                 </div>
             </div>
         </div>
-        
-    </div>    
+        <div class="author-intro">
+            <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
+        </div>
+    </div>
+    <script src="../common-assets/js/project-common-js.js"></script>
+    <script src="js/tip-calculator.js"></script>
 </body>
 </html>
