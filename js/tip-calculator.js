@@ -48,19 +48,19 @@ function ValidateTipCalculatorForm(bill,tip,person)
 {
     _cmnRemoveAllErrorMessage();
     
-    if(bill == "" || isNaN(bill) || (!isNaN(bill) && bill <= 0))
+    if(bill == "" || isNaN(bill) || bill <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("inputBill", "Enter the valid bill.");
         return false;
     }
     
-    if(tip == "" || isNaN(tip) || (!isNaN(tip) && tip <= 0))
+    if(tip == "" || isNaN(tip) || tip < 1)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("inputTip", "Enter tip percentage.");
         return false;
     }   
 
-    if(person == "" || isNaN(person) || (!isNaN(person) && person <= 0))
+    if(person == "" || isNaN(person) || !Number.isInteger(person) || person <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
         return false;
