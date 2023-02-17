@@ -60,7 +60,7 @@ function ValidateTipCalculatorForm(bill,tip,person)
         return false;
     }   
 
-    if(person == "" || isNaN(person) || !Number.isInteger(person) || person <= 0)
+    if(person == "" || isNaN(person) || !Number.isInteger(Number(person)) || person <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
         return false;
