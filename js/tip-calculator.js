@@ -4,25 +4,25 @@ function TipCalculatorFormValidate()
 {
     RemoveAllErrorMessage();
     
-    var bill = document.getElementById("billInput").value;
-    var tip = document.getElementById("tipInput").value;
-    var person = document.getElementById("personInput").value;
+    var bill = document.getElementById("inputBill").value;
+    var tip = document.getElementById("inputTip").value;
+    var person = document.getElementById("inputPerson").value;
 
-    if(IsInputFieldEmpty("billInput") || (isNaN(bill) && bill <= 0))
+    if(bill == "" || isNaN(bill) || (!isNaN(bill) && bill <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("billInput", "Enter the valid bill.");
+        ShowErrorMessageBottomOfTheInputFiled("inputBill", "Enter the valid bill.");
         return false;
     }
     
-    if(IsInputFieldEmpty("tipInput") || (isNaN(tip) && tip < 1))
+    if(IsInputFieldEmpty("inputTip") || isNaN(bill) || (!isNaN(tip) && tip < 1))
     {
-        ShowErrorMessageBottomOfTheInputFiled("tipInput", "Enter tip persantage.");
+        ShowErrorMessageBottomOfTheInputFiled("inputTip", "Enter tip percentage.");
         return false;
     }   
 
-    if(IsInputFieldEmpty("personInput") || (!isNaN(person) && !Number.isInteger(person) && person < 1))
+    if(IsInputFieldEmpty("inputPerson") || isNaN(bill) || (!isNaN(person) && !Number.isInteger(person) && person < 1))
     {
-        ShowErrorMessageBottomOfTheInputFiled("personInput", "Enter valid number of person.");
+        ShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
         return false;
     }
     
@@ -31,9 +31,9 @@ function TipCalculatorFormValidate()
 
 function TipCalculatorReset()
 {
-    document.getElementById("billInput").value = "";
-    document.getElementById("tipInput").value = "";
-    document.getElementById("personInput").value = "";
+    document.getElementById("inputBill").value = "";
+    document.getElementById("inputTip").value = "";
+    document.getElementById("inputPerson").value = "";
 
     RemoveAllErrorMessage();
 
@@ -45,9 +45,9 @@ function TipCalculation()
 {
     if(TipCalculatorFormValidate())
     {
-        var Bill = Number(document.getElementById("billInput").value);
-        var TipPersentage = Number(document.getElementById("tipInput").value);
-        var TotalPerson = Number(document.getElementById("personInput").value);
+        var Bill = Number(document.getElementById("inputBill").value);
+        var TipPersentage = Number(document.getElementById("inputTip").value);
+        var TotalPerson = Number(document.getElementById("inputPerson").value);
         let TotalTip, TotalBill, PerPersonTip;
 
         TotalTip = (TipPersentage / 100) * Bill;
@@ -55,12 +55,12 @@ function TipCalculation()
         PerPersonTip =TotalBill / TotalPerson;
 
         //set the results
-        ShowResultTipCalculatorInOutput("bill", (Bill.toFixed(2)));
-        ShowResultTipCalculatorInOutput("tip", TipPersentage);
-        ShowResultTipCalculatorInOutput("totalPerson", TotalPerson);
-        ShowResultTipCalculatorInOutput("totalTip", (TotalTip.toFixed(2)));
-        ShowResultTipCalculatorInOutput("totalBill", (TotalBill.toFixed(2)));
-        ShowResultTipCalculatorInOutput("perPersonBill", (PerPersonTip.toFixed(2)));
+        ShowTipCalculations("bill", (Bill.toFixed(2)));
+        ShowTipCalculations("tip", TipPersentage);
+        ShowTipCalculations("totalPerson", TotalPerson);
+        ShowTipCalculations("totalTip", (TotalTip.toFixed(2)));
+        ShowTipCalculations("totalBill", (TotalBill.toFixed(2)));
+        ShowTipCalculations("perPersonBill", (PerPersonTip.toFixed(2)));
 
         //result div show
         _cmnHideElement("OutputInfo");
@@ -68,8 +68,8 @@ function TipCalculation()
     }
 }
 
-function ShowResultTipCalculatorInOutput(id, result)
+function ShowTipCalculations(inputFiledId, value)
 {
-    document.getElementById(id).innerHTML = result;
+    document.getElementById(inputFiledId).innerHTML = value;
 }
 
