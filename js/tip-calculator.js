@@ -1,26 +1,26 @@
 function CalculateTips()
 {
     var Bill = document.getElementById("inputBill").value;
-    var TipPersentage = document.getElementById("inputTip").value;
-    var TotalPerson = document.getElementById("inputPerson").value;
+    var Tips = document.getElementById("inputTips").value;
+    var Person = document.getElementById("inputPerson").value;
 
-    if(ValidateTipCalculatorForm(Bill,TipPersentage,TotalPerson))
+    if(ValidateTipCalculatorForm(Bill,Tips,Person))
     {
         Bill = Number(Bill);
-        TipPersentage = Number(TipPersentage);
-        TotalPerson = Number(TotalPerson);
+        Tips = Number(Tips);
+        Person = Number(Person);
 
         var TotalTips, TotalBill, PerPersonTips;
 
-        TotalTips = (TipPersentage / 100) * Bill;
+        TotalTips = (Tips / 100) * Bill;
         TotalBill = (TotalTips + Bill);
-        PerPersonTips =TotalBill / TotalPerson;
+        PerPersonTips =TotalBill / Person;
 
         //show the results
         ShowTipCalculationsResult("bill", (Bill.toFixed(2)));
-        ShowTipCalculationsResult("tip", TipPersentage);
-        ShowTipCalculationsResult("totalPerson", TotalPerson);
-        ShowTipCalculationsResult("totalTip", (TotalTips.toFixed(2)));
+        ShowTipCalculationsResult("tip", Tips);
+        ShowTipCalculationsResult("person", Person);
+        ShowTipCalculationsResult("totalTips", (TotalTips.toFixed(2)));
         ShowTipCalculationsResult("totalBill", (TotalBill.toFixed(2)));
         ShowTipCalculationsResult("perPersonBill", (PerPersonTips.toFixed(2)));
 
@@ -34,8 +34,15 @@ function ResetTipCalculator()
 {
     if(confirm("Are you sure want to reset the calculator?")){
         document.getElementById("inputBill").value = "";
-        document.getElementById("inputTip").value = "";
+        document.getElementById("inputTips").value = "";
         document.getElementById("inputPerson").value = "";
+
+        ShowTipCalculationsResult("bill", "0");
+        ShowTipCalculationsResult("tip", "0");
+        ShowTipCalculationsResult("person", "0");
+        ShowTipCalculationsResult("totalTips", "0");
+        ShowTipCalculationsResult("totalBill", "0");
+        ShowTipCalculationsResult("perPersonBill", "0");
 
         _cmnRemoveAllErrorMessage();
 
@@ -44,7 +51,7 @@ function ResetTipCalculator()
     }
 }
 
-function ValidateTipCalculatorForm(bill,tip,person)
+function ValidateTipCalculatorForm(bill,tips,person)
 {
     _cmnRemoveAllErrorMessage();
     
@@ -54,22 +61,22 @@ function ValidateTipCalculatorForm(bill,tip,person)
         return false;
     }
     
-    if(tip == "" || isNaN(tip) || tip < 1)
+    if(tips == "" || isNaN(tips) || tips < 1)
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("inputTip", "Enter tip percentage.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputTips", "Enter the valid tips percentage.");
         return false;
     }   
 
     if(person == "" || isNaN(person) || !Number.isInteger(Number(person)) || person <= 0)
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter the valid number of person.");
         return false;
     }
     
     return true;
 }
 
-function ShowTipCalculationsResult(inputFiledId, value)
+function ShowTipCalculationsResult(elementID, value)
 {
-    document.getElementById(inputFiledId).innerHTML = value;
+    document.getElementById(elementID).innerHTML = value;
 }
