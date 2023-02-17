@@ -2,7 +2,7 @@ _cmnHideElement("OutputResult");
 
 function TipCalculatorFormValidate()
 {
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
     
     var bill = document.getElementById("inputBill").value;
     var tip = document.getElementById("inputTip").value;
@@ -10,19 +10,19 @@ function TipCalculatorFormValidate()
 
     if(bill == "" || isNaN(bill) || (!isNaN(bill) && bill <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("inputBill", "Enter the valid bill.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputBill", "Enter the valid bill.");
         return false;
     }
     
-    if(IsInputFieldEmpty("inputTip") || isNaN(bill) || (!isNaN(tip) && tip < 1))
+    if(tip == "" || isNaN(bill) || (!isNaN(tip) && tip < 1))
     {
-        ShowErrorMessageBottomOfTheInputFiled("inputTip", "Enter tip percentage.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputTip", "Enter tip percentage.");
         return false;
     }   
 
-    if(IsInputFieldEmpty("inputPerson") || isNaN(bill) || (!isNaN(person) && !Number.isInteger(person) && person < 1))
+    if(person == "" || isNaN(bill) || (!isNaN(person) && !Number.isInteger(person) && person < 1))
     {
-        ShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputPerson", "Enter valid number of person.");
         return false;
     }
     
@@ -31,14 +31,16 @@ function TipCalculatorFormValidate()
 
 function TipCalculatorReset()
 {
-    document.getElementById("inputBill").value = "";
-    document.getElementById("inputTip").value = "";
-    document.getElementById("inputPerson").value = "";
+    if(confirm("Are you sure want to reset the calculator?")){
+        document.getElementById("inputBill").value = "";
+        document.getElementById("inputTip").value = "";
+        document.getElementById("inputPerson").value = "";
 
-    RemoveAllErrorMessage();
+        _cmnRemoveAllErrorMessage();
 
-    _cmnHideElement("OutputResult");
-    _cmnShowElement("OutputInfo", "flex");
+        _cmnHideElement("OutputResult");
+        _cmnShowElement("OutputInfo", "flex");
+    }
 }
 
 function TipCalculation()

@@ -21,7 +21,7 @@
                 <!-- input feilds -->
                 <div class="input-group">
                     <label for="bill" class="input-label">Bill($):</label>
-                    <input id="inputBill" placeholder="Bill" type="number" name="bill"  class="input-feild">
+                    <input id="inputBill" placeholder="Bill($)" type="number" name="bill"  class="input-feild">
                 </div>
 
                 <div class="input-group">
@@ -31,7 +31,7 @@
                 
                 <div class="input-group">
                     <label for="person" class="input-label">Number of Person:</label>
-                    <input id="inputPerson" placeholder="Person" type="number" name="person" class="input-feild">
+                    <input id="inputPerson" placeholder="Person 👥" type="number" name="person" class="input-feild">
                 </div>
                 <!-- buttons -->
                 <div class="input-group">
@@ -43,10 +43,11 @@
             <div id="tipOutput" class="container-feild">             
                 <!-- output information -->
                 <div id="OutputInfo" class="output-information output-box">
+                    <h2>Basic Infromations</h2>
                     <ul>
-                        <li><b>Bill</b> indicate that how much your cost</li>
-                        <li><b>Tip(%)</b> indicate that tip persentage</li>
-                        <li><b>Number of person</b> is how many person will share the bill</li>
+                        <li>The <b><i>Bill</i></b> field indicates how much your cost is in the droller.</li>
+                        <li>The <b><i>Tip</i></b> field indicates the tip percentage you want to give.</li>
+                        <li>The <b><i>Number of person</i></b> field indicates how many of you guys want to give the tips.</li>
                     </ul>
                 </div>
                 <!-- output result -->
@@ -76,7 +77,7 @@
                         <tr>
                             <td>Bill Contributor</td>
                             <td>:</td>
-                            <td><span id="totalPerson">2</span> person</td>
+                            <td><span id="totalPerson">2</span> <small>👥</small></td>
                         </tr>
                         <tr>
                             <td>Per Person Bill</td>
