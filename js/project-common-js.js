@@ -27,7 +27,7 @@ function _cmnShowErrorMessageBottomOfTheInputFiled(fieldID,errorMessage)
     inputField.parentNode.insertBefore(errorMessageElement, inputField.nextSibling); // set the error message uder the error feild
 }
 
-function IsInputFieldEmpty(feildId)
+function _cmnIsInputFieldEmpty(feildId)
 {
     var inputField = document.getElementById(feildId);
     if(inputField.value == "") // check the feild empty or not
