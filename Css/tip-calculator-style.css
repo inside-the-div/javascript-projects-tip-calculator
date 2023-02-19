@@ -1,4 +1,4 @@
-.output-box table tr:nth-last-child(3) td {
+.tool-output-box table tr:nth-last-child(3) td {
     border-top: 1px solid black;
     border-collapse: collapse;
 }
