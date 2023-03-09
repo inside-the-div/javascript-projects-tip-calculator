@@ -4,7 +4,7 @@
 </p>
 
 <p>
-he calculator typically consists of an input field for the total bill amount and a selection of pre-defined tip percentages (e.g. 10%, 15%, 20%). Once the user inputs the bill amount and selects a tip percentage, the JavaScript code calculates the tip amount and displays the total amount including the tip.
+The calculator typically consists of an input field for the total bill amount and a selection of pre-defined tip percentages (e.g. 10%, 15%, 20%). Once the user inputs the bill amount and selects a tip percentage, the JavaScript code calculates the tip amount and displays the total amount including the tip.
 You can check this project live <a target="_blank" href="https://toolbot.net/tip-calculator">here</a> .</p>
 
 <p><b>If you are a beginner and want to learn javascript from basic, please check out our other JavaScript Simple Projects With Source Code</b></p>
